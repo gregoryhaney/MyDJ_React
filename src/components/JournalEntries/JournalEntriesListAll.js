@@ -5,10 +5,11 @@
 */
 
 import React, { useEffect, useState } from "react"
-import { useHistory } from "react-router-dom"
+import { useHistory, Link } from "react-router-dom"
 import { getEntries } from "./JournalEntriesManager"
 import { getDevelopers } from "../Developers/DevelopersManager"
 import logo from '../MyDJ-removebg.png'
+import { SinglePublicEntryWithDetails } from "./JournalEntryViewDetails"
 
 export const EntriesList = () => {
     const [ entries, setEntries ] = useState([])
@@ -37,6 +38,10 @@ export const EntriesList = () => {
     return (
         <>
         <h1>All Public Journal Entries Listing</h1>
+            <button className="button" onClick={() => {
+                    history.push(`entrynewform`) 
+                                       
+                }}>Create a Journal Entry</button> <br></br>
         <hr className="rounded"></hr> 
         <img src={logo} className="App-logo" alt="logo" />
         <hr className="rounded"></hr> 
@@ -45,22 +50,27 @@ export const EntriesList = () => {
                 (entry) => {
                     if (entry.is_public === true){                                      
                     return <div className="entry" key={`entry--${entry.id}`}>
-                    <article className="entryCard">                      
-                    {entry.subject}
+                    <article className="entryCard"> 
+                   
+                    <ul>
+                        <li>                     
+                            <Link to={`/viewentry/${entry.id}`}>{entry.subject}</Link>
 
                             {
                                 developers.map(
                                     (developer) => {
-                                    if (entry.developer.id === developer.id) {
-                                    return <div className="developer" key={`developer--${developer.id}`}>
+                                        if (entry.developer.id === developer.id) {
+                                            return <div className="developer" key={`developer--${developer.id}`}>
                                         <article className="developerCard">
                                            by {developer.nickname}.
                                         </article>
                                         </div>
                                     } 
-                                    }                                  
+                                }                                  
                                 )
                             }
+                        </li>
+                    </ul> 
                                
                     </article>
                     </div>                     

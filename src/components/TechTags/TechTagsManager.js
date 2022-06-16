@@ -18,7 +18,7 @@ export const getTechtags = () => {
 
 
 export const getSingleTechtag = (id) => {
-    return fetch(`http://localhost:8000/techtags/${id}`, {
+    return fetch(`http://localhost:8000/techtags/${id.id}`, {
         headers:{
             "Authorization": `Token ${localStorage.getItem("auth_token")}`
         }

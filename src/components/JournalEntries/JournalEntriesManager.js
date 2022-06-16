@@ -3,6 +3,8 @@
     calls regarding journal entries.
 */
 
+import { useParams } from "react-router-dom"
+
 /////////////////////// GETTER FUNCTIONS ///////////////////////////////////////
 
 
@@ -17,7 +19,17 @@ export const getEntries = () => {
 
 
 export const getSingleEntry = (id) => {
-    return fetch(`http://localhost:8000/entries/${id}`, {
+    return fetch(`http://localhost:8000/entries/${id.id}`, {
+        headers:{
+            "Authorization": `Token ${localStorage.getItem("auth_token")}`
+        }
+    })
+        .then(res => res.json())
+}
+
+
+export const getSingleEntryWithDeveloper = (id) => {
+    return fetch(`http://localhost:8000/entries/${id.id}?expand=developers`, {
         headers:{
             "Authorization": `Token ${localStorage.getItem("auth_token")}`
         }
@@ -27,5 +39,26 @@ export const getSingleEntry = (id) => {
 
 
 
+export const getEntriesWithDeveloper = () => {
+    return fetch("http://localhost:8000/entries?expand=developers", {
+        headers:{
+            "Authorization": `Token ${localStorage.getItem("auth_token")}`
+        }
+    })
+        .then(res => res.json())
+}
+
 
 ////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+export const terminateEntry = (id) => {
+    fetch(`http://localhost:8000/entries/${id}`, {
+        method: "DELETE",
+        headers:{
+            "Authorization": `Token ${localStorage.getItem("auth_token")}`
+        }
+    })
+}

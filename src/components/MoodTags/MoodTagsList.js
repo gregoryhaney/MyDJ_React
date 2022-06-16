@@ -7,7 +7,6 @@
 import React, { useEffect, useState } from "react"
 import { useHistory } from "react-router-dom"
 import { getMoodtags } from "./MoodTagsManager"
-import { MoodTagNewForm } from "./MoodTagsCreateForm"
 import logo from '../MyDJ-removebg.png'
 
 export const MoodtagsList = () => {
@@ -22,9 +21,12 @@ export const MoodtagsList = () => {
                         "Authorization": `Token ${localStorage.getItem("auth_token")}`
                     }
                 })
-                    .then(getMoodtags())
+                    getMoodtags()
+                        .then((moodtagsArray) => {
+                            setMoodtags(moodtagsArray)
+                    })
             }
-            
+         
 
 
             // call the FN that get all moodtags from DB via API Fetch
@@ -37,8 +39,7 @@ export const MoodtagsList = () => {
                 },
             []
             )   
-
-        
+               
 
     return (
         <>
@@ -58,11 +59,13 @@ export const MoodtagsList = () => {
               
 
                         return <div className="moodtag" key={`moodtag--${moodtag.id}`}>
-                            <article className="moodtagCard">                      
+                            <article className="moodtagCard"> 
+                                                 
                                 <p>{moodtag.tag_title}
 
                                 <button className="button" onClick={() => {
-                                history.push(`EditMoodtag/${moodtag.id}`)
+                                history.push(`moodedit/${moodtag.id}`)
+
                             }}>Edit Mood Tag</button> 
 
                             <button className="button" onClick={() => {

@@ -7,11 +7,10 @@
 
 import React, { useEffect, useState } from "react"
 import { useHistory } from "react-router-dom"
-import Datetime from 'react-datetime'
 import logo from '../MyDJ-removebg.png'
 
+
 export const EntryCreateForm = () => {
-    const [ developers, setDevelopers ] = useState([])
     const [ entry, updateEntry ] = useState([])
     const [ moodtags, setMoodtags ] = useState([])
     const [ techtags, setTechtags ] = useState([])
@@ -22,24 +21,9 @@ export const EntryCreateForm = () => {
 
     // TODO: get current user and set the first useEffect
     // to retrieve ONLY that single user
-
-
+    // TODO: un-hardcode the developer: 1 line in "newEntry"
 
     
-
-    useEffect(
-        () => {
-            fetch("http://localhost:8000/developers", {
-            headers:{
-                "Authorization": `Token ${localStorage.getItem("auth_token")}`
-            }})
-            .then(res => res.json())
-            .then((developersArray) => {
-                setDevelopers(developersArray)
-            })
-        },
-        []
-    )
 
 
     useEffect(
@@ -74,31 +58,32 @@ export const EntryCreateForm = () => {
 
 
 
-
         // build the object that will be sent via API when form is submitted
             // use the preventDefault FN to prevent default browser behavior
             // after the form is submitted
         const addNewEntry = (evt) => {
             evt.preventDefault()
             
+
                 const newEntry = {
-                    datetime: Date().toLocaleString(),
+                    datetime: new Date(),
                     subject: entry.subject,
                     body: entry.body,
-                    is_public: "",
+                    is_public: entry.is_public,
                     techtag: entry.techtag,
                     moodtag: entry.moodtag,
-                    developer: developers
+                    developer: 6
                 }
         
             const fetchOption = {
                 method: "POST",
                 headers: {
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json",
+                    "Authorization": `Token ${localStorage.getItem("auth_token")}`
                 },
                 body: JSON.stringify(newEntry)
             }
-            return fetch("http://localhost:8080/entries", fetchOption)
+            return fetch("http://localhost:8000/entries", fetchOption)
                 .then(() => {
                     history.push("/entries")
                 })
@@ -113,8 +98,8 @@ export const EntryCreateForm = () => {
             <form className="newEntryForm">
             <h2 className="newEntryForm__title">Add New Journal Entry</h2>
 
-                <fieldset>
-                    {/* <div className="form-group" key={`property--${property.id}`}> */}
+                <fieldset>  
+                    <div className="form-group">                 
                         <label htmlFor="subject">Subject:</label>
                         <input
                             onChange={
@@ -129,7 +114,7 @@ export const EntryCreateForm = () => {
                             className="form-control"
                             placeholder="Subject..."
                             />
-                    {/* </div> */}
+                    </div>                    
                 </fieldset>
 
 
@@ -165,8 +150,8 @@ export const EntryCreateForm = () => {
                                 updateEntry(copy)
                     }}>
                         <option value="0">It is...</option>
-                        <option value="true">Public</option>
-                        <option value="false">Private</option>
+                        <option value="True">Public</option>
+                        <option value="False">Private</option>
                            
                     </select>
                 </div>
@@ -174,45 +159,73 @@ export const EntryCreateForm = () => {
 
 
 
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="techtag">Technology Tag:</label><br></br>
-                    <select defaultValue={'0'}
-                        onChange={
-                            (evt) => {
-                                const copy = {...entry}
-                                copy.techtag = evt.target.value
-                                updateEntry(copy)
-                    }}>
-                        <option value="0">Select the technology tag...</option>
-                            {techtags.map(techtag => {
-                                return <option value={techtag.id}>
-                                            {techtag.tech_title}                                  
-                                        </option>                        
-                            })}   
-                    </select>
-                </div>
-            </fieldset>
+                <fieldset>
+                    <div className="form-group">
+                        <label htmlFor="techtag">Technology Tag:</label><br></br>
+                        <select defaultValue={'0'}
+                            onChange={
+                                (evt) => {
+                                    const copy = {...entry}
+                                    copy.techtag = evt.target.value
+                                    updateEntry(copy)
+                        }}>
+                            <option value="0">Select the technology tag...</option>
+                                {techtags.map(techtag => {
+                                    return <option value={techtag.id}>
+                                                {techtag.tech_title}                                  
+                                            </option>                        
+                                })}   
+                        </select>
+                    </div>
+                </fieldset>
 
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="moodtag">Mood Tag:</label><br></br>
-                    <select defaultValue={'0'}
-                        onChange={
-                            (evt) => {
-                                const copy = {...entry}
-                                copy.moodtag = evt.target.value
-                                updateEntry(copy)
-                    }}>
-                        <option value="0">Select the mood tag...</option>
+
+                <fieldset>
+                    <div className="form-group">
+                        <label htmlFor="moodtag">Mood Tag:</label><br></br>
+                        <select defaultValue={'0'}
+                            onChange={
+                                (evt) => {
+                                    const copy = {...entry}
+                                    copy.moodtag = evt.target.value
+                                    updateEntry(copy)
+                        }}>
+                            <option value="0">Select the mood tag...</option>
+                                {moodtags.map(moodtag => {
+                                    return <option value={moodtag.id}>
+                                                {moodtag.tag_title}                                  
+                                            </option>                        
+                                })}   
+                        </select>
+                    </div>
+                </fieldset>
+
+
+
+
+
+                {/* <>
+                <fieldset>
+                    <div className="form-group">
+                        <label htmlFor="moodtag">Mood Tag:</label><br></br>
+                        <select defaultValue={'0'}
+                            onChange={
+                                (evt) => {
+                                    const copy = {...entry}
+                                    copy.moodtag = evt.target.value
+                                    updateEntry(copy)
+                                }}>
                             {moodtags.map(moodtag => {
-                                return <option value={moodtag.id}>
-                                            {moodtag.tag_title}                                  
-                                        </option>                        
-                            })}   
+                                 
+                                <input type="checkbox" id="moodtag.id" name="${moodtag.tag_title}"></input> 
+                                    
+                                })}   
                     </select>
-                </div>
-            </fieldset>
+                    </div>
+                </fieldset>
+
+            </> */}
+
 
 
 
@@ -223,30 +236,8 @@ export const EntryCreateForm = () => {
                 Add Journal Entry
             </button>
         </form>
+
+
         </>
     )
-
 }
-
-
-/*
-<fieldset>
-                <div className="form-group">
-                    <label htmlFor="occupied">Occupied?</label>
-                    <input 
-                        onChange={
-                            (evt) => {
-                                const copy = {...property}
-                                copy.occupied = evt.target.checked
-                                updateProperty(copy)
-                            }
-                        } 
-                        required autoFocus
-                        type="checkbox"
-                        className="form-control"
-                        placeholder="Occupied?"
-                        />
-                </div>
-            </fieldset>
-
-*/

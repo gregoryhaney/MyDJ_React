@@ -24,7 +24,10 @@ export const TechtagsList = () => {
                 "Authorization": `Token ${localStorage.getItem("auth_token")}`
             }
         })
-            .then(getTechtags())
+                getTechtags()
+                .then((techtagsArray) => {
+                    setTechtags(techtagsArray)
+                })
     }
 
 
@@ -66,7 +69,7 @@ export const TechtagsList = () => {
                                 
                                 
                                 <button className="button" onClick={() => {
-                                history.push(`EditTechtag/${techtag.id}`)
+                                history.push(`techtagedit/${techtag.id}`)
                             }}>Edit Technology Tag</button> 
 
                             <button className="button" onClick={() => {

@@ -3,6 +3,8 @@
     calls regarding mood tags.
 */
 
+import { MoodtagsList } from "./MoodTagsList"
+
 /////////////////////// GETTER FUNCTIONS ///////////////////////////////////////
 
 
@@ -17,7 +19,7 @@ export const getMoodtags = () => {
 
 
 export const getSingleMoodtag = (id) => {
-    return fetch(`http://localhost:8000/moodtags/${id}`, {
+    return fetch(`http://localhost:8000/moodtags/${id.id}`, {
         headers:{
             "Authorization": `Token ${localStorage.getItem("auth_token")}`
         }
