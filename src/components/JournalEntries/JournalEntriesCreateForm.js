@@ -15,16 +15,7 @@ export const EntryCreateForm = () => {
     const [ moodtags, setMoodtags ] = useState([])
     const [ techtags, setTechtags ] = useState([])
     const history = useHistory()
-
-
-
-
-    // TODO: get current user and set the first useEffect
-    // to retrieve ONLY that single user
-    // TODO: un-hardcode the developer: 1 line in "newEntry"
-
-    
-
+   
 
     useEffect(
         () => {
@@ -54,9 +45,6 @@ export const EntryCreateForm = () => {
         },
         []
     )
-
-
-
 
         // build the object that will be sent via API when form is submitted
             // use the preventDefault FN to prevent default browser behavior
@@ -201,43 +189,126 @@ export const EntryCreateForm = () => {
                 </fieldset>
 
 
+                <br></br>
+                <button onClick={addNewEntry} className="btn btn-primary">
+                    Add Journal Entry
+                </button>
 
 
+                <button className="btn btn-primary"
+                            onClick={() => {
+                            history.push({ pathname: "/"})}}>
+                    Cancel
+                </button>
 
-                {/* <>
-                <fieldset>
-                    <div className="form-group">
-                        <label htmlFor="moodtag">Mood Tag:</label><br></br>
-                        <select defaultValue={'0'}
-                            onChange={
-                                (evt) => {
-                                    const copy = {...entry}
-                                    copy.moodtag = evt.target.value
-                                    updateEntry(copy)
-                                }}>
-                            {moodtags.map(moodtag => {
-                                 
-                                <input type="checkbox" id="moodtag.id" name="${moodtag.tag_title}"></input> 
-                                    
-                                })}   
-                    </select>
-                    </div>
-                </fieldset>
-
-            </> */}
-
-
-
-
-
-
-            <br></br>
-            <button onClick={addNewEntry} className="btn btn-primary">
-                Add Journal Entry
-            </button>
         </form>
-
-
         </>
     )
 }
+
+
+
+/////////////// scratchpad for multiple dropdown selection ////////////////
+
+        // document.getElementById('submit').onclick = function() {
+        //     var selected = [];
+        //     for (var option of document.getElementById('moods').options)
+        //     {
+        //         if (option.selected) {
+        //             selected.push(option.value);
+        //         }
+        //     }
+        //     alert(selected);
+        // }
+
+        // <label for="moods">Choose your moods:</label>
+ 
+        //     <select     id="moods" 
+        //                 multiple="multiple">
+        //         <option value="0">Select the mood tag...</option>
+        //                         {moodtags.map(moodtag => {
+        //                             return <option value={moodtag.id}>
+        //                                         {moodtag.tag_title}                                  
+        //                                     </option> 
+
+        //         <option value="dog">Dog</option>
+        //         <option value="cat">Cat</option>
+        //         <option value="rabbit">Rabbit</option>
+        //         <option value="parrot">Parrot</option>
+
+        //     </select>
+            
+        //     <button id="submit">Get Selected Values</button>
+
+
+
+        //////////// more garbage that doesn't work ////////////////
+
+                            {/* <>
+                    <fieldset>
+                                {
+
+                    document.getElementById('submit').onclick = function() {
+                    var selected = [];
+                    for (var option of document.getElementById('moods').options)
+                    {
+                        if (option.selected) {
+                            selected.push(option.value);
+                        }
+                    }
+                    alert(selected);
+                    }
+                                }
+        <label for="moods">Choose your moods:</label>
+        <>
+            <select     id="moods" 
+                        multiple="multiple">
+                            <>
+                <option value="0">Select the mood tag...</option>
+                                {moodtags.map(moodtag => {
+                                    return <option value={moodtag.id}>
+                                                {moodtag.tag_title}                                  
+                                            </option> 
+
+                            </>
+
+            </select>
+        </>
+            
+            <button id="submit">Get Selected Values</button>
+
+                                        </fieldset>
+                                        </> */}
+
+
+
+
+
+            /////////////////// EVEN MORE CRAP ////////
+
+
+            {/* <>
+                            <fieldset>
+                                <div className="form-group">
+                                    <label htmlFor="moodtag">Mood Tag:</label><br></br>
+                                    <select 
+                                        onChange={
+                                            (evt) => {
+                                                const copy = {...entry}
+                                                copy.moodtag = evt.target.value
+                                                updateEntry(copy)
+                                            }}>
+                                        {moodtags.map(moodtag => {
+                                            
+                                            <input  type="checkbox" 
+                                                    id={moodtag.id} 
+                                                    name="${moodtag.tag_title}">
+                                            </input> 
+                                                
+                                            })}   
+                                </select>
+                                </div>
+                            </fieldset>
+
+                        </> */}
+

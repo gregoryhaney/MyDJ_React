@@ -3,8 +3,6 @@
     calls regarding developers.
 */
 
-/////////////////////// GETTER FUNCTIONS ///////////////////////////////////////
-
 
 export const getDevelopers = () => {
     return fetch("http://localhost:8000/developers", {
@@ -23,7 +21,3 @@ export const getSingleDeveloper = (id) => {
     })
         .then(res => res.json())
 }
-
-////////////////////////////////////////////////////////////////////////////////
-
-

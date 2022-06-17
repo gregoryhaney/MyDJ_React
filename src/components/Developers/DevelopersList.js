@@ -14,7 +14,7 @@ export const DevelopersList = () => {
     const history = useHistory()
 
             
-            // call the FN that get all developers from DB via API Fetch
+            // call the FN that gets all developers from DB via API Fetch
             useEffect(
                 () => {
                 getDevelopers()
@@ -36,7 +36,7 @@ export const DevelopersList = () => {
                     (developer) => {
                         return <div className="developer" key={`developer--${developer.id}`}>
                             <article className="developerCard">                      
-                                <p>{developer.first_name} {developer.last_name}, also known as {developer.nickname}<br></br>
+                                <p>{developer.first_name} {developer.last_name}, who is also known as {developer.nickname}<br></br>
                                 </p>
                             </article>
                         </div>                

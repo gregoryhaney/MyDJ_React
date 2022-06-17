@@ -21,27 +21,7 @@ export const MyEntriesList = () => {
                 terminateEntry(id)
                 history.push(`entries`)                
             }
-                    
-            
-            // const deleteTechtag = (id) => {
-            //     fetch(`http://localhost:8000/techtags/${id}`, {
-            //         method: "DELETE",
-            //         headers:{
-            //             "Authorization": `Token ${localStorage.getItem("auth_token")}`
-            //         }
-            //     })
-            //             getTechtags()
-            //             .then((techtagsArray) => {
-            //                 setTechtags(techtagsArray)
-            //             })
-            // }
-        
-
-
-
-
-
-            
+              
             // call FNs to perform API fetch to get:
                 // 1. entries from DB 
                 // 2. all developers from DB

@@ -12,7 +12,6 @@ import { getTechtags } from "../TechTags/TechTagsManager"
 import logo from '../MyDJ-removebg.png'
 import { useParams } from "react-router-dom"
 
-
 export const EntryEditForm = () => {
     const [ update, updatedEntry ] = useState([])
     const [ moodtags, setMoodtags ] = useState([])
@@ -54,7 +53,7 @@ export const EntryEditForm = () => {
             }, []
             )
         
-           console.log(originalEntry)
+           
             // build the object that will be sent via API when form is submitted
             // use the preventDefault FN to prevent default browser behavior
             // after the form is submitted
@@ -105,9 +104,6 @@ export const EntryEditForm = () => {
                                 (evt) => {
                                     const copy = {...update}
                                     copy.subject = evt.target.value
-
-        {console.log(update)}
-
                                     updatedEntry(copy)
                                 }
                             }
@@ -130,9 +126,6 @@ export const EntryEditForm = () => {
                                 (evt) => {
                                     const copy = {...update}
                                     copy.body = evt.target.value
-
-        {console.log(update)}
-
                                     updatedEntry(copy)
                                 }
                             }
@@ -146,81 +139,67 @@ export const EntryEditForm = () => {
 
 
                 <fieldset>
-                <div className="form-group">
-                    <label htmlFor="isPublic">Public or Private?</label><br></br>
-                    <select value={originalEntry.is_public}
-                    
-                        onChange={
-                            (evt) => {
-                                const copy = {...update}
-                                copy.is_public = evt.target.value
-
-        {console.log(update)}
-
-                                updatedEntry(copy)
-                    }}>
-                       
-                        <option value="0">It is...</option>
-                        <option value="True">Public</option>
-                        <option value="False">Private</option>
-                           
-                    </select>
-                </div>
+                    <div className="form-group">
+                        <label htmlFor="isPublic">Public or Private?</label><br></br>
+                        <select value={originalEntry.is_public}
+                        
+                            onChange={
+                                (evt) => {
+                                    const copy = {...update}
+                                    copy.is_public = evt.target.value
+                                    updatedEntry(copy)
+                        }}>
+                        
+                            <option value="0">It is...</option>
+                            <option value="True">Public</option>
+                            <option value="False">Private</option>
+                            
+                        </select>
+                    </div>
                 </fieldset>
 
 
-
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="techtag">Technology Tag:</label><br></br>
-                    <select value={originalEntry.techtag}
-                        onChange={
-                            (evt) => {
-                                const copy = {...update}
-                                copy.techtag = evt.target.value
-
-        {console.log(update)}
-
-                                updatedEntry(copy)
-                    }}
-                        placeholder = {originalEntry.techtag?.tech_title}
-                    >
-                        <option value="0">Select the technology tag...</option>
-                            {techtags.map(techtag => {
-                                return <option value={techtag.id}>
-                                            {techtag.tech_title}                                  
-                                        </option>                        
-                            })}   
-                    </select>
-                </div>
-            </fieldset>
+                <fieldset>
+                    <div className="form-group">
+                        <label htmlFor="techtag">Technology Tag:</label><br></br>
+                        <select
+                            onChange={
+                                (evt) => {
+                                    const copy = {...update}
+                                    copy.techtag = evt.target.value
+                                    updatedEntry(copy)
+                        }}>
+                            <option value="0">Select the technology tag...</option>
+                                {techtags.map(techtag => {
+                                    
+                                    return <option value={techtag.id} selected>
+                                                {techtag.tech_title}                                  
+                                            </option>                        
+                                })}   
+                        </select>
+                    </div>
+                </fieldset>
 
 
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="moodtag">Mood Tag:</label><br></br>
-                    <select value={originalEntry.moodtag}
-                        onChange={
-                            (evt) => {
-                                const copy = {...update}
-                                copy.moodtag = evt.target.value
-
-        {console.log(update)}
-
-                                updatedEntry(copy)
-                    }}>
-                        <option value="0">Select the mood tag...</option>
-                            {moodtags.map(moodtag => {
-                                return <option value={moodtag.id}>
-                                            {moodtag.tag_title}                                  
-                                        </option>                        
-                            })}   
-                    </select>
-                </div>
-            </fieldset>
-
-
-
+                <fieldset>
+                    <div className="form-group">
+                        <label htmlFor="moodtag">Mood Tag:</label><br></br>
+                        <select
+                            onChange={
+                                (evt) => {
+                                    const copy = {...update}
+                                    copy.moodtag = evt.target.value
+                                    updatedEntry(copy)
+                        }}>
+                            <option value="0">Select the mood tag...</option>
+                                {moodtags.map(moodtag => {
+                                    return <option value={moodtag.id} selected>
+                                                {moodtag.tag_title}                                  
+                                            </option>                        
+                                })}   
+                        </select>
+                    </div>
+                </fieldset>
 
 
                     <br></br>

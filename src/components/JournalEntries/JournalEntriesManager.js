@@ -51,9 +51,6 @@ export const getEntriesWithDeveloper = () => {
 
 ////////////////////////////////////////////////////////////////////////////////
 
-
-
-
 export const terminateEntry = (id) => {
     fetch(`http://localhost:8000/entries/${id}`, {
         method: "DELETE",

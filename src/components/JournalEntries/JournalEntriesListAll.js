@@ -9,14 +9,11 @@ import { useHistory, Link } from "react-router-dom"
 import { getEntries } from "./JournalEntriesManager"
 import { getDevelopers } from "../Developers/DevelopersManager"
 import logo from '../MyDJ-removebg.png'
-import { SinglePublicEntryWithDetails } from "./JournalEntryViewDetails"
 
 export const EntriesList = () => {
     const [ entries, setEntries ] = useState([])
     const [ developers, setDevelopers ] = useState([])
     const history = useHistory()
-
-
             
             // call FNs to perform API fetch to get:
                 // 1. all entries from DB
