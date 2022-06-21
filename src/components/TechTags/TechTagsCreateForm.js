@@ -39,9 +39,9 @@ export const TechtagNewForm = () => {
         <>
             <hr className="rounded"></hr> 
                 <img src={logo} className="App-logo" alt="logo" />
+            <h1 className="newTechTagForm__title">Create New Technology Tag</h1>
                 <hr className="rounded"></hr> 
             <form className="newTechTagForm">
-            <h2 className="newTechTagForm__title">Create New Technology Tag</h2>
 
                 <fieldset>
                     <div className="form-group">
@@ -67,6 +67,12 @@ export const TechtagNewForm = () => {
             <button onClick={addNewTechTag} className="button">
                 Save
             </button>
+                <br></br>
+                <br></br>
+                <hr className="rounded"></hr>   
+                <br></br>
+
+
         </form>
 
         

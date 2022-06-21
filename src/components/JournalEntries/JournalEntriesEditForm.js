@@ -160,45 +160,73 @@ export const EntryEditForm = () => {
 
 
                 <fieldset>
-                    <div className="form-group">
-                        <label htmlFor="techtag">Technology Tag:</label><br></br>
-                        <select
-                            onChange={
-                                (evt) => {
-                                    const copy = {...update}
-                                    copy.techtag = evt.target.value
-                                    updatedEntry(copy)
-                        }}>
-                            <option value="0">Select the technology tag...</option>
+                <div className="form-group">
+                    <label htmlFor="techtag">Tech Tag</label><br></br>
+                    <h6>Hold down [command] on Mac or [ctrl] on Windows to select multiple tags</h6>
+                    <select  multiple={true}
+                        onChange={
+                            (evt) => {
+                                    // create empty array to hold selected tech ids
+                                let techvalues = []                                    
+                                const copy = {...update}
+
+                                    // for loop to push the selected tech id to
+                                    // the array 
+                                        // run it as many times as there are selections
+
+                                    for (let i = 0; i < evt.target.options.length; i++) {                                     
+                                            if (evt.target.options[i].selected == true) {
+                                            techvalues.push(evt.target.options[i].value)
+                                            }
+                                    }
+                                copy.techtag = techvalues                                            
+                                updatedEntry(copy)                        
+                            }
+                    }>
+                        <option value="0">Select the tech tag...</option>
                                 {techtags.map(techtag => {
-                                    
-                                    return <option value={techtag.id} selected>
+                                    return <option value={techtag.id}>
                                                 {techtag.tech_title}                                  
                                             </option>                        
-                                })}   
-                        </select>
-                    </div>
+                                })}  
+                    </select>
+                </div>
                 </fieldset>
 
 
+
                 <fieldset>
-                    <div className="form-group">
-                        <label htmlFor="moodtag">Mood Tag:</label><br></br>
-                        <select
-                            onChange={
-                                (evt) => {
-                                    const copy = {...update}
-                                    copy.moodtag = evt.target.value
-                                    updatedEntry(copy)
-                        }}>
-                            <option value="0">Select the mood tag...</option>
+                <div className="form-group">
+                    <label htmlFor="moodtag">Mood Tag</label><br></br>
+                    <h6>Hold down [command] on Mac or [ctrl] on Windows to select multiple tags</h6>
+                    <select  multiple={true}
+                        onChange={
+                            (evt) => {
+                                    // create empty array to hold selected mood ids
+                                let moodvalues = []                                    
+                                const copy = {...update}
+
+                                    // for loop to push the selected mood id to
+                                    // the array 
+                                        // run it as many times as there are selections
+
+                                    for (let i = 0; i < evt.target.options.length; i++) {                           
+                                            if (evt.target.options[i].selected == true) {
+                                            moodvalues.push(evt.target.options[i].value)
+                                            }
+                                    }
+                                copy.moodtag = moodvalues
+                                updatedEntry(copy)                        
+                            }
+                    }>
+                        <option value="0">Select the mood tag...</option>
                                 {moodtags.map(moodtag => {
-                                    return <option value={moodtag.id} selected>
+                                    return <option value={moodtag.id}>
                                                 {moodtag.tag_title}                                  
                                             </option>                        
-                                })}   
-                        </select>
-                    </div>
+                                })}  
+                    </select>
+                </div>
                 </fieldset>
 
 
@@ -212,10 +240,20 @@ export const EntryEditForm = () => {
                             history.push({ pathname: "/myentrieslist"})}}>
                         Cancel
                     </button>
-
+                    <br></br><br></br><br></br>
+                                    <hr className="rounded"></hr>
 
             </form>
         </>
     )
 
 }
+
+
+
+
+
+
+
+
+

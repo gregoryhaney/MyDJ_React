@@ -34,14 +34,14 @@ export const EntriesList = () => {
     
     return (
         <>
-        <h1>All Public Journal Entries Listing</h1>
             <button className="button" onClick={() => {
-                    history.push(`entrynewform`) 
-                                       
-                }}>Create a Journal Entry</button> <br></br>
+                history.push(`entrynewform`) 
+                
+            }}>Create a Journal Entry</button> <br></br>
         <hr className="rounded"></hr> 
         <img src={logo} className="App-logo" alt="logo" />
         <hr className="rounded"></hr> 
+            <h1>All Public Journal Entries Listing</h1>
         {
             entries.map(
                 (entry) => {
@@ -70,11 +70,15 @@ export const EntriesList = () => {
                     </ul> 
                                
                     </article>
-                    </div>                     
+                    
+                    </div>   
                         } 
                     }
-            )                                         
-        }
+                    )                                         
+                }
+                <br></br>
+                <hr className="rounded"></hr>   
+                <br></br>               
         </>
     )          
 }

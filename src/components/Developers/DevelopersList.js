@@ -27,9 +27,9 @@ export const DevelopersList = () => {
 
     return (
         <>
-                <h1>Developers Listing</h1>
                 <hr className="rounded"></hr> 
                 <img src={logo} className="App-logo" alt="logo" />
+                <h1>Developers Listing</h1>
                 <hr className="rounded"></hr> 
             {
                 developers.map(
@@ -43,6 +43,10 @@ export const DevelopersList = () => {
                     } 
                 )       
             }
+                <br></br>
+                <br></br>
+                <hr className="rounded"></hr>   
+                <br></br>
         </>
     )
 }

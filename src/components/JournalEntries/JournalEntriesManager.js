@@ -5,6 +5,7 @@
 
 import { useParams } from "react-router-dom"
 
+
 /////////////////////// GETTER FUNCTIONS ///////////////////////////////////////
 
 
@@ -59,3 +60,4 @@ export const terminateEntry = (id) => {
         }
     })
 }
+

@@ -39,9 +39,9 @@ export const MoodTagNewForm = () => {
         <>
             <hr className="rounded"></hr> 
                 <img src={logo} className="App-logo" alt="logo" />
+            <h1 className="newMoodTagForm__title">Create New Mood Tag</h1>
                 <hr className="rounded"></hr> 
             <form className="newMoodTagForm">
-            <h2 className="newMoodTagForm__title">Create New Mood Tag</h2>
 
                 <fieldset>
                     <div className="form-group">
@@ -67,6 +67,11 @@ export const MoodTagNewForm = () => {
             <button onClick={addNewMoodTag} className="button">
                 Save
             </button>
+                <br></br>
+                <br></br>
+                <hr className="rounded"></hr>   
+                <br></br>
+
         </form>
 
         

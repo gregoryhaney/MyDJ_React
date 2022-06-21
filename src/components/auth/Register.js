@@ -15,6 +15,10 @@ export const Register = () => {
     const newUser = {
       "username": username.current.value,
       "password": password.current.value
+
+      // "email":    ,
+      // "nickname":
+
     }
 
     registerUser(newUser).then(res => {

@@ -48,25 +48,23 @@ export const TechtagsList = () => {
 
     return (
         <>
-                <h1>Technology Tags Listing</h1>
                 <hr className="rounded"></hr> 
                 <img src={logo} className="App-logo" alt="logo" />
+                <h1>Technology Tags Listing</h1>
                 <hr className="rounded"></hr> 
 
                 <button className="button" onClick={() => {
                             history.push(`TechtagNewForm`)                           
-                            }}>Create a New Technology Tag</button> <br></br>
+                            }}>Create a New Technology Tag</button> 
                 <hr className="rounded"></hr>
 
             {
                 techtags.map(
                     (techtag) => {
               
-
                         return <div className="techtag" key={`techtag--${techtag.id}`}>
                             <article className="techtagCard">                      
-                                <p>{techtag.tech_title}
-                                
+                                {techtag.tech_title}                                
                                 
                                 <button className="button" onClick={() => {
                                 history.push(`techtagedit/${techtag.id}`)
@@ -75,15 +73,15 @@ export const TechtagsList = () => {
                             <button className="button" onClick={() => {
                                 deleteTechtag(techtag.id)                            
                             }}>Delete Technology Tag</button> <br></br>
-
-                                <br></br>
-                                </p>
+                                
                             </article>
-                        </div>                     
-                        
+                        </div>                   
                         } 
                 )       
             }
+                <br></br>
+                <hr className="rounded"></hr>   
+                <br></br>  
         </>
     )
 }

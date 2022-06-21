@@ -10,10 +10,12 @@ export const App = () => (
         <Route render={() => {
             if (localStorage.getItem("auth_token")) {
                 return <>
+                            <div className="main__content">
                     <Route>
                         <NavBar />
                         <ApplicationViews />
                     </Route>
+                            </div>
                 </>
             } else {
                 return <Redirect to="/login" />

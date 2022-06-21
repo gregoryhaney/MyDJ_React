@@ -33,11 +33,11 @@ export const SinglePublicEntryWithDetails = () => {
 
     return (
         <>
-        <h1>Public Journal Entry</h1>
             
         <hr className="rounded"></hr> 
         <img src={logo} className="App-logo" alt="logo" />
         <hr className="rounded"></hr>             
+        <h1>Public Journal Entry</h1>
 
                 <div className="entry" key={`entry--${singleEntry.id}`}>
                     <article className="entryCard">                      
@@ -48,15 +48,16 @@ export const SinglePublicEntryWithDetails = () => {
                         <p>SUBJECT:          {singleEntry.subject}<br></br></p>                       
                         <p>ENTRY:            {singleEntry.body}<br></br></p>                       
             
+                                            
                         <p>TECHNOLOGY TAG:   {singleEntry?.techtag?.map(
                                                 (tech_title) => {
                                                 return tech_title.tech_title
-                                                })} <br></br></p>
+                                                })} </p>
                             
                         <p>MOOD TAG:         {singleEntry?.moodtag?.map(   
                                                 (tag_title) => {
                                                 return tag_title.tag_title
-                                                },)}<br></br></p>                       
+                                                },)}</p>                 
 
                     </article>
                 </div>                     

@@ -52,9 +52,9 @@ export const TechEditForm = () => {
         <>
             <hr className="rounded"></hr> 
             <img src={logo} className="App-logo" alt="logo" />
+            <h2 className="editTechForm__title">Edit a Tech Tag</h2>
                 <hr className="rounded"></hr>
             <form className="editTechForm">
-            <h2 className="editTechForm__title">Edit a Tech Tag</h2>
 
                 <fieldset>
                     <div className="form-group">
@@ -87,7 +87,10 @@ export const TechEditForm = () => {
                         history.push({ pathname: '/techtags'})
                     }}
             >Cancel</button>
-
+                <br></br>
+                <br></br>
+                <hr className="rounded"></hr>   
+                <br></br>  
         </form>
         </>
     )

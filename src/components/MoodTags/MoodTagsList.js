@@ -43,9 +43,9 @@ export const MoodtagsList = () => {
 
     return (
         <>
-                <h1>Mood Tags Listing</h1>
                 <hr className="rounded"></hr> 
                 <img src={logo} className="App-logo" alt="logo" />
+                <h1>Mood Tags Listing</h1>
                 <hr className="rounded"></hr> 
 
                 <button className="button" onClick={() => {
@@ -55,13 +55,12 @@ export const MoodtagsList = () => {
 
             {
                 moodtags.map(
-                    (moodtag) => {
-              
+                    (moodtag) => {              
 
                         return <div className="moodtag" key={`moodtag--${moodtag.id}`}>
                             <article className="moodtagCard"> 
                                                  
-                                <p>{moodtag.tag_title}
+                                {moodtag.tag_title}
 
                                 <button className="button" onClick={() => {
                                 history.push(`moodedit/${moodtag.id}`)
@@ -72,13 +71,14 @@ export const MoodtagsList = () => {
                                 deleteMoodtag(moodtag.id)                            
                             }}>Delete Mood Tag</button> <br></br>
 
-                                </p>
                             </article>
                         </div>                     
-                        
                         } 
                 )       
             }
+                <br></br>
+                <hr className="rounded"></hr>   
+                <br></br>  
         </>
     )
 }

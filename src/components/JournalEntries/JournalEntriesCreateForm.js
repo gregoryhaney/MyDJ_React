@@ -4,11 +4,9 @@
     This is called by route: "/entrynewform"
 */
 
-
 import React, { useEffect, useState } from "react"
 import { useHistory } from "react-router-dom"
 import logo from '../MyDJ-removebg.png'
-
 
 export const EntryCreateForm = () => {
     const [ entry, updateEntry ] = useState([])
@@ -77,17 +75,18 @@ export const EntryCreateForm = () => {
                 })
             }
         
+    
 
     return (
         <>
             <hr className="rounded"></hr> 
-            <img src={logo} className="App-logo" alt="logo" />
+            <img src={logo} className="App-logo" alt="logo" /> 
+            <h1 className="newEntryForm__title">Add New Journal Entry</h1>
                 <hr className="rounded"></hr>
             <form className="newEntryForm">
-            <h2 className="newEntryForm__title">Add New Journal Entry</h2>
 
                 <fieldset>  
-                    <div className="form-group">                 
+                    <div className="form-group" key={`entry--${entry.id}`}>                 
                         <label htmlFor="subject">Subject:</label>
                         <input
                             onChange={
@@ -108,7 +107,7 @@ export const EntryCreateForm = () => {
 
 
                 <fieldset>
-                    <div className="form-group">
+                    <div className="form-group" key={`entry--${entry.id}`}>
                         <label htmlFor="body">Body of the text:</label>
                         <input
                             onChange={
@@ -128,7 +127,7 @@ export const EntryCreateForm = () => {
 
 
                 <fieldset>
-                <div className="form-group">
+                <div className="form-group" key={`entry--${entry.id}`}>
                     <label htmlFor="isPublic">Public or Private?</label><br></br>
                     <select defaultValue={'0'}
                         onChange={
@@ -146,47 +145,77 @@ export const EntryCreateForm = () => {
                 </fieldset>
 
 
-
+  
                 <fieldset>
-                    <div className="form-group">
-                        <label htmlFor="techtag">Technology Tag:</label><br></br>
-                        <select defaultValue={'0'}
-                            onChange={
-                                (evt) => {
-                                    const copy = {...entry}
-                                    copy.techtag = evt.target.value
-                                    updateEntry(copy)
-                        }}>
-                            <option value="0">Select the technology tag...</option>
+                <div className="form-group"key={`entry--${entry.id}`}>
+                    <label htmlFor="techtag">Tech Tag</label><br></br>
+                    <h6>Hold down [command] on Mac or [ctrl] on Windows to select multiple tags</h6>
+                    <select  multiple={true}
+                        onChange={
+                            (evt) => {
+                                    // create empty array to hold selected tech ids
+                                let techvalues = []                                    
+                                const copy = {...entry}
+
+                                    // for loop to push the selected tech id to
+                                    // the array 
+                                        // run it as many times as there are selections
+
+                                    for (let i = 0; i < evt.target.options.length; i++) {                                     
+                                            if (evt.target.options[i].selected == true) {
+                                            techvalues.push(evt.target.options[i].value)
+                                            }
+                                    }
+                                copy.techtag = techvalues                                            
+                                updateEntry(copy)                        
+                            }
+                    }>
+                        <option value="0">Select the tech tag...</option>
                                 {techtags.map(techtag => {
                                     return <option value={techtag.id}>
                                                 {techtag.tech_title}                                  
                                             </option>                        
-                                })}   
-                        </select>
-                    </div>
+                                })}  
+                    </select>
+                </div>
                 </fieldset>
 
 
+
                 <fieldset>
-                    <div className="form-group">
-                        <label htmlFor="moodtag">Mood Tag:</label><br></br>
-                        <select defaultValue={'0'}
-                            onChange={
-                                (evt) => {
-                                    const copy = {...entry}
-                                    copy.moodtag = evt.target.value
-                                    updateEntry(copy)
-                        }}>
-                            <option value="0">Select the mood tag...</option>
+                <div className="form-group" key={`entry--${entry.id}`}>
+                    <label htmlFor="moodtag">Mood Tag</label><br></br>
+                    <h6>Hold down [command] on Mac or [ctrl] on Windows to select multiple tags</h6>
+                    <select  multiple={true}
+                        onChange={
+                            (evt) => {
+                                    // create empty array to hold selected mood ids
+                                let moodvalues = []                                    
+                                const copy = {...entry}
+
+                                    // for loop to push the selected mood id to
+                                    // the array 
+                                        // run it as many times as there are selections
+
+                                    for (let i = 0; i < evt.target.options.length; i++) {                           
+                                            if (evt.target.options[i].selected == true) {
+                                            moodvalues.push(evt.target.options[i].value)
+                                            }
+                                    }
+                                copy.moodtag = moodvalues
+                                updateEntry(copy)                        
+                            }
+                    }>
+                        <option value="0">Select the mood tag...</option>
                                 {moodtags.map(moodtag => {
                                     return <option value={moodtag.id}>
                                                 {moodtag.tag_title}                                  
                                             </option>                        
-                                })}   
-                        </select>
-                    </div>
+                                })}  
+                    </select>
+                </div>
                 </fieldset>
+
 
 
                 <br></br>
@@ -200,115 +229,10 @@ export const EntryCreateForm = () => {
                             history.push({ pathname: "/"})}}>
                     Cancel
                 </button>
-
+                                    <br></br><br></br><br></br>
+                                    <hr className="rounded"></hr>
         </form>
         </>
     )
 }
-
-
-
-/////////////// scratchpad for multiple dropdown selection ////////////////
-
-        // document.getElementById('submit').onclick = function() {
-        //     var selected = [];
-        //     for (var option of document.getElementById('moods').options)
-        //     {
-        //         if (option.selected) {
-        //             selected.push(option.value);
-        //         }
-        //     }
-        //     alert(selected);
-        // }
-
-        // <label for="moods">Choose your moods:</label>
- 
-        //     <select     id="moods" 
-        //                 multiple="multiple">
-        //         <option value="0">Select the mood tag...</option>
-        //                         {moodtags.map(moodtag => {
-        //                             return <option value={moodtag.id}>
-        //                                         {moodtag.tag_title}                                  
-        //                                     </option> 
-
-        //         <option value="dog">Dog</option>
-        //         <option value="cat">Cat</option>
-        //         <option value="rabbit">Rabbit</option>
-        //         <option value="parrot">Parrot</option>
-
-        //     </select>
-            
-        //     <button id="submit">Get Selected Values</button>
-
-
-
-        //////////// more garbage that doesn't work ////////////////
-
-                            {/* <>
-                    <fieldset>
-                                {
-
-                    document.getElementById('submit').onclick = function() {
-                    var selected = [];
-                    for (var option of document.getElementById('moods').options)
-                    {
-                        if (option.selected) {
-                            selected.push(option.value);
-                        }
-                    }
-                    alert(selected);
-                    }
-                                }
-        <label for="moods">Choose your moods:</label>
-        <>
-            <select     id="moods" 
-                        multiple="multiple">
-                            <>
-                <option value="0">Select the mood tag...</option>
-                                {moodtags.map(moodtag => {
-                                    return <option value={moodtag.id}>
-                                                {moodtag.tag_title}                                  
-                                            </option> 
-
-                            </>
-
-            </select>
-        </>
-            
-            <button id="submit">Get Selected Values</button>
-
-                                        </fieldset>
-                                        </> */}
-
-
-
-
-
-            /////////////////// EVEN MORE CRAP ////////
-
-
-            {/* <>
-                            <fieldset>
-                                <div className="form-group">
-                                    <label htmlFor="moodtag">Mood Tag:</label><br></br>
-                                    <select 
-                                        onChange={
-                                            (evt) => {
-                                                const copy = {...entry}
-                                                copy.moodtag = evt.target.value
-                                                updateEntry(copy)
-                                            }}>
-                                        {moodtags.map(moodtag => {
-                                            
-                                            <input  type="checkbox" 
-                                                    id={moodtag.id} 
-                                                    name="${moodtag.tag_title}">
-                                            </input> 
-                                                
-                                            })}   
-                                </select>
-                                </div>
-                            </fieldset>
-
-                        </> */}
 

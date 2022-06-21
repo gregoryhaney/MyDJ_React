@@ -52,9 +52,9 @@ export const MoodEditForm = () => {
         <>
             <hr className="rounded"></hr> 
             <img src={logo} className="App-logo" alt="logo" />
+            <h2 className="editMoodForm__title">Edit a Mood Tag</h2>
                 <hr className="rounded"></hr>
             <form className="editMoodForm">
-            <h2 className="editMoodForm__title">Edit a Mood Tag</h2>
 
                 <fieldset>
                     <div className="form-group">
@@ -88,6 +88,10 @@ export const MoodEditForm = () => {
                     }}
             >Cancel</button>
 
+                <br></br>
+                <br></br>
+                <hr className="rounded"></hr>   
+                <br></br>
         </form>
         </>
     )

@@ -47,10 +47,10 @@ export const MyEntriesList = () => {
                 
     return (
         <>
-            <h1>Listing of My Journal Entries</h1>
             <hr className="rounded"></hr> 
             <img src={logo} className="App-logo" alt="logo" />
             <hr className="rounded"></hr> 
+            <h1>Listing of My Journal Entries</h1>
             {
                 
                 entries.map(
@@ -75,7 +75,10 @@ export const MyEntriesList = () => {
                         } 
                     }                                
             )                      
-        }         
+        }  
+                <br></br>
+                <hr className="rounded"></hr>   
+                <br></br>         
         </>
     )          
 }
