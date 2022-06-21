@@ -51,7 +51,7 @@ export const SinglePublicEntryWithDetails = () => {
                                             
                         <p>TECHNOLOGY TAG:   {singleEntry?.techtag?.map(
                                                 (tech_title) => {
-                                                return tech_title.tech_title
+                                                return tech_title.tech_title  
                                                 })} </p>
                             
                         <p>MOOD TAG:         {singleEntry?.moodtag?.map(   
