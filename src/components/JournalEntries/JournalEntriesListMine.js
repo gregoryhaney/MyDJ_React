@@ -49,8 +49,8 @@ export const MyEntriesList = () => {
         <>
             <hr className="rounded"></hr> 
             <img src={logo} className="App-logo" alt="logo" />
-            <hr className="rounded"></hr> 
             <h1>Listing of My Journal Entries</h1>
+            <hr className="rounded"></hr> 
             {
                 
                 entries.map(
@@ -62,11 +62,11 @@ export const MyEntriesList = () => {
                     <article className="entryCard">                     
                         {entry.subject} by {entry.developer.nickname}.
 
-                        <button className="button" onClick={() => {
+                        <button className="btn btn btn-dark" onClick={() => {
                                 history.push(`editentry/${entry.id}`)
                             }}>Edit Journal Entry</button> 
 
-                            <button className="button" onClick={() => {
+                            <button className="btn btn-outline-danger" onClick={() => {
                                 deleteEntry(entry.id)                            
                             }}>Delete Journal Entry</button>
 

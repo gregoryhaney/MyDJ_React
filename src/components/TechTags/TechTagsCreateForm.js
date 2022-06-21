@@ -64,9 +64,17 @@ export const TechtagNewForm = () => {
 
 
             <br></br>
-            <button onClick={addNewTechTag} className="button">
+            <button onClick={addNewTechTag} className="btn btn btn-dark">
                 Save
             </button>
+
+
+            <button className="btn btn-primary"
+                        onClick={() => {
+                        history.push({ pathname: "/techtags"})}}>
+                Cancel
+            </button>
+
                 <br></br>
                 <br></br>
                 <hr className="rounded"></hr>   

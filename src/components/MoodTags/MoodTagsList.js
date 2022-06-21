@@ -48,7 +48,7 @@ export const MoodtagsList = () => {
                 <h1>Mood Tags Listing</h1>
                 <hr className="rounded"></hr> 
 
-                <button className="button" onClick={() => {
+                <button className="btn btn btn-dark" onClick={() => {
                                 history.push(`MoodTagNewForm`)                            
                             }}>Create a New Mood Tag</button> <br></br>
                 <hr className="rounded"></hr>
@@ -62,12 +62,12 @@ export const MoodtagsList = () => {
                                                  
                                 {moodtag.tag_title}
 
-                                <button className="button" onClick={() => {
+                                <button className="btn btn-dark" onClick={() => {
                                 history.push(`moodedit/${moodtag.id}`)
 
                             }}>Edit Mood Tag</button> 
 
-                            <button className="button" onClick={() => {
+                            <button className="btn btn-outline-danger" onClick={() => {
                                 deleteMoodtag(moodtag.id)                            
                             }}>Delete Mood Tag</button> <br></br>
 

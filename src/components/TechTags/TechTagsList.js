@@ -53,7 +53,7 @@ export const TechtagsList = () => {
                 <h1>Technology Tags Listing</h1>
                 <hr className="rounded"></hr> 
 
-                <button className="button" onClick={() => {
+                <button className="btn btn btn-dark" onClick={() => {
                             history.push(`TechtagNewForm`)                           
                             }}>Create a New Technology Tag</button> 
                 <hr className="rounded"></hr>
@@ -66,11 +66,11 @@ export const TechtagsList = () => {
                             <article className="techtagCard">                      
                                 {techtag.tech_title}                                
                                 
-                                <button className="button" onClick={() => {
+                                <button className="btn btn btn-dark" onClick={() => {
                                 history.push(`techtagedit/${techtag.id}`)
                             }}>Edit Technology Tag</button> 
 
-                            <button className="button" onClick={() => {
+                            <button className="btn btn-outline-danger" onClick={() => {
                                 deleteTechtag(techtag.id)                            
                             }}>Delete Technology Tag</button> <br></br>
                                 

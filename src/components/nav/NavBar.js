@@ -53,7 +53,7 @@ export const NavBar = () => {
 
                   {
                     localStorage.getItem("auth_token") !== null ?
-                      <button className="button" onClick={() => {
+                      <button className="btn btn-warning" onClick={() => {
                         localStorage.removeItem("auth_token")
                         history.push({ pathname: "/" })
                       }}>

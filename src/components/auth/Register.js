@@ -34,15 +34,15 @@ return (
     <form onSubmit={handleRegister}>
       <h3>Register an account</h3>
       <fieldset>
-        <label htmlFor="inputUsername">Username</label>
+        <label htmlFor="inputUsername">Username:</label>
         <input ref={username} type="text" name="username" placeholder="Username" required />
       </fieldset>
       <fieldset>
-        <label htmlFor="inputPassword"> Password </label>
+        <label htmlFor="inputPassword"> Password: </label>
         <input ref={password} type="password" name="password" placeholder="Password" required />
       </fieldset>
       <fieldset>
-        <button type="submit">Register</button>
+        <button className="btn btn btn-dark" type="submit">Register</button>
       </fieldset>
     </form>
     <section>

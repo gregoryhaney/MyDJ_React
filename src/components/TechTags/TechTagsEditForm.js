@@ -78,7 +78,7 @@ export const TechEditForm = () => {
 
 
             <br></br>
-            <button onClick={updateTheTech} className="btn btn-primary">
+            <button onClick={updateTheTech} className="btn btn btn-dark">
                 Save Changes
             </button>
 

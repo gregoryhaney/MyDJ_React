@@ -78,7 +78,7 @@ export const MoodEditForm = () => {
 
 
             <br></br>
-            <button onClick={updateTheMood} className="btn btn-primary">
+            <button onClick={updateTheMood} className="btn btn btn-dark">
                 Save Changes
             </button>
 

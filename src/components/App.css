@@ -3,7 +3,7 @@
   }
   
   .App-logo {
-    height: 10vmin;
+    height: 8vmin;
     pointer-events: none;
   }
   
@@ -61,7 +61,7 @@
   list-style: none;
   position: fixed;
   top: 0;
-  background: darkcyan;
+  background: rgb(2, 36, 36);
   left: 0;
   bottom: 0;
   height: 100vh;

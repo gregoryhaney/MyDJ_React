@@ -1,4 +1,4 @@
-/* .navbar {
+.navbar {
     display: flex;
     flex-wrap: nowrap;
     justify-content: left;
@@ -7,7 +7,7 @@
 .navbar__item {
     flex-basis: 10%;
     list-style-type: none;
-} */
+}
 
 .logo {
     justify-content: left;

@@ -38,15 +38,15 @@ export const Login = () => {
       <section>
         <form onSubmit={handleLogin}>
           <fieldset>
-            <label htmlFor="inputUsername"> Username</label>
-            <input ref={username} type="username" id="username" placeholder="Username address" required autoFocus />
+            <label htmlFor="inputUsername"> Username: </label>
+            <input ref={username} type="username" id="username" placeholder="Username" required autoFocus />
           </fieldset>
           <fieldset>
-            <label htmlFor="inputPassword"> Password </label>
+            <label htmlFor="inputPassword"> Password: </label>
             <input ref={password} type="password" id="password" placeholder="Password" required />
           </fieldset>
           <fieldset>
-            <button type="submit">Sign In</button>
+            <button className="btn btn btn-dark " type="submit">Sign In</button>
           </fieldset>
         </form>
       </section>

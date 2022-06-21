@@ -219,7 +219,7 @@ export const EntryCreateForm = () => {
 
 
                 <br></br>
-                <button onClick={addNewEntry} className="btn btn-primary">
+                <button onClick={addNewEntry} className="btn btn btn-dark">
                     Add Journal Entry
                 </button>
 

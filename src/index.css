@@ -1,19 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Festive&family=Lato:ital,wght@0,100;0,400;1,100&family=Shizuru&display=swap");
 
-/* body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-} */
-
 
 body {
-  background-color: #969996 !important;
+  background-color: #afb1af !important;
   color: #000;
-  margin: 3px;
+  margin: 10px;
   font-family: "Lato", sans-serif;
 }
 
@@ -23,7 +14,12 @@ code {
     monospace;
 }
 
-
+.btn {
+  padding: 3px;
+  margin: 16px;
+  box-shadow: 4px 4px 8px #c5c5c5, 
+              -4px -5px 8px #8a8888; 
+}
 
 .button {
   color: #090909; 
@@ -41,7 +37,7 @@ code {
 textarea {
   color: #000;
   font-family: "Lato", Arial, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.5;
 }
 
@@ -73,6 +69,6 @@ hr.rounded {
 }
 
 .App-logo {
-  max-width: 250px;
+  max-width: 150px;
   aspect-ratio: 1 / 1;
 }

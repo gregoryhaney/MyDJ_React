@@ -64,9 +64,16 @@ export const MoodTagNewForm = () => {
 
 
             <br></br>
-            <button onClick={addNewMoodTag} className="button">
+            <button onClick={addNewMoodTag} className="btn btn btn-dark">
                 Save
             </button>
+
+            <button className="btn btn-primary"
+                        onClick={() => {
+                        history.push({ pathname: "/moodtags"})}}>
+                Cancel
+            </button>
+                                    
                 <br></br>
                 <br></br>
                 <hr className="rounded"></hr>   

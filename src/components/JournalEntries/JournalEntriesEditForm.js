@@ -231,7 +231,7 @@ export const EntryEditForm = () => {
 
 
                     <br></br>
-                    <button onClick={updateTheEntry} className="btn btn-primary">
+                    <button onClick={updateTheEntry} className="btn btn-outline-primary">
                         Save Changes
                     </button>
 

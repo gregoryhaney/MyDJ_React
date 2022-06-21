@@ -34,14 +34,13 @@ export const EntriesList = () => {
     
     return (
         <>
-            <button className="button" onClick={() => {
-                history.push(`entrynewform`) 
-                
-            }}>Create a Journal Entry</button> <br></br>
         <hr className="rounded"></hr> 
         <img src={logo} className="App-logo" alt="logo" />
-        <hr className="rounded"></hr> 
+            <button className="btn btn btn-dark" onClick={() => {
+                history.push(`entrynewform`)                 
+            }}>Create a Journal Entry</button> <br></br>
             <h1>All Public Journal Entries Listing</h1>
+        <hr className="rounded"></hr> 
         {
             entries.map(
                 (entry) => {
