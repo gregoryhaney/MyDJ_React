@@ -61,7 +61,8 @@ The idea for MyDJ came from my desire to journal everyday and not needing to hav
 
 ### ERD Image
 
-![MyDJ_ERD](https://user-images.githubusercontent.com/10354411/174811274-471e0a51-8e96-47d6-8d71-dbb747d0cec3.png)
+![MyDJ_ERD20220621](https://user-images.githubusercontent.com/10354411/174880807-eb94b917-72b9-463a-8a31-07902f6d28a3.png)
+
 
 
 ## How this Application Was Developed
