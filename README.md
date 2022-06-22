@@ -14,7 +14,7 @@ The idea for MyDJ came from my desire to journal everyday and not needing to hav
 
 ### Video Demonstration / Walk-Thorough
 
- <<< COMING SOON .... >>>
+ https://drive.google.com/file/d/1NBRZqh73nYP61W6e8BeSY6aC6UrxsbO_/view?usp=sharing
 
 ### Screen Shot Images
 
