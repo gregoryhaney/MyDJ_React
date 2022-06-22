@@ -62,14 +62,16 @@ export const MyEntriesList = () => {
                     <article className="entryCard">                     
                         {entry.subject} by {entry.developer.nickname}.
 
-                        <button className="btn btn btn-dark" onClick={() => {
+                        <div className="entrybtns">
+                            <button className="btn btn btn-dark" onClick={() => {
                                 history.push(`editentry/${entry.id}`)
                             }}>Edit Journal Entry</button> 
 
                             <button className="btn btn-outline-danger" onClick={() => {
                                 deleteEntry(entry.id)                            
                             }}>Delete Journal Entry</button>
-
+                        </div>
+                            <hr className="rounded2"></hr>
                         </article>
                         </div>
                         } 

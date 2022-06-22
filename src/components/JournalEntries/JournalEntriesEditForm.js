@@ -161,7 +161,7 @@ export const EntryEditForm = () => {
 
                 <fieldset>
                 <div className="form-group">
-                    <label htmlFor="techtag">Tech Tag</label><br></br>
+                    <label htmlFor="techtag">Tech Tag:</label><br></br>
                     <h6>Hold down [command] on Mac or [ctrl] on Windows to select multiple tags</h6>
                     <select  multiple={true}
                         onChange={
@@ -197,7 +197,7 @@ export const EntryEditForm = () => {
 
                 <fieldset>
                 <div className="form-group">
-                    <label htmlFor="moodtag">Mood Tag</label><br></br>
+                    <label htmlFor="moodtag">Mood Tag:</label><br></br>
                     <h6>Hold down [command] on Mac or [ctrl] on Windows to select multiple tags</h6>
                     <select  multiple={true}
                         onChange={

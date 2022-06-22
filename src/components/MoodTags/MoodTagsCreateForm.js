@@ -65,7 +65,7 @@ export const MoodTagNewForm = () => {
 
             <br></br>
             <button onClick={addNewMoodTag} className="btn btn btn-dark">
-                Save
+                Save New Tag
             </button>
 
             <button className="btn btn-primary"

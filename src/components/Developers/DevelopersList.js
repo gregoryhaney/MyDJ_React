@@ -38,6 +38,7 @@ export const DevelopersList = () => {
                             <article className="developerCard">                      
                                 <p>{developer.first_name} {developer.last_name}, who is also known as {developer.nickname}<br></br>
                                 </p>
+                                <hr className="rounded2"></hr>
                             </article>
                         </div>                
                     } 

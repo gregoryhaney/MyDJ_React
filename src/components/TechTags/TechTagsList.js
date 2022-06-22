@@ -14,9 +14,6 @@ export const TechtagsList = () => {
     const history = useHistory()
 
 
-   // TODO: Move the below DELETE to TechTagsManager
-   // TODO: add 'are you sure' alert window in return after delete button click
-
     const deleteTechtag = (id) => {
         fetch(`http://localhost:8000/techtags/${id}`, {
             method: "DELETE",
@@ -30,8 +27,7 @@ export const TechtagsList = () => {
                 })
     }
 
-
-            
+          
             // call the FN that get all techtags from DB via API Fetch
             useEffect(
                 () => {
@@ -43,8 +39,6 @@ export const TechtagsList = () => {
             []
             )   
 
-
-        
 
     return (
         <>
@@ -63,17 +57,19 @@ export const TechtagsList = () => {
                     (techtag) => {
               
                         return <div className="techtag" key={`techtag--${techtag.id}`}>
-                            <article className="techtagCard">                      
+                            <article className="techtagCard">                  
                                 {techtag.tech_title}                                
-                                
-                                <button className="btn btn btn-dark" onClick={() => {
-                                history.push(`techtagedit/${techtag.id}`)
-                            }}>Edit Technology Tag</button> 
 
-                            <button className="btn btn-outline-danger" onClick={() => {
-                                deleteTechtag(techtag.id)                            
-                            }}>Delete Technology Tag</button> <br></br>
-                                
+                                <div className="tagbtns">
+                                    <button className="btn btn-dark" onClick={() => {
+                                        history.push(`techtagedit/${techtag.id}`)
+                                    }}>Edit Technology Tag</button> 
+                            
+                                    <button className="btn btn-outline-danger" onClick={() => {
+                                        deleteTechtag(techtag.id)                            
+                                    }}>Delete Technology Tag</button> <br></br>
+                                </div>
+                                <hr className="rounded2"></hr>                         
                             </article>
                         </div>                   
                         } 
