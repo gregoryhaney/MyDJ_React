@@ -12,3 +12,7 @@
 .logo {
     justify-content: left;
   }
+
+  .navbar-item img {
+    max-height: 3rem;
+  }
