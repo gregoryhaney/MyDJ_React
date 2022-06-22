@@ -58,7 +58,9 @@ export const EntriesList = () => {
                                         if (entry.developer.id === developer.id) {
                                             return <div className="developer" key={`developer--${developer.id}`}>
                                         <article className="developerCard">
-                                           by {developer.nickname}.
+                                           by {developer.nickname}
+                                        
+                                            <hr className="rounded2"></hr>
                                         </article>
                                         </div>
                                     } 

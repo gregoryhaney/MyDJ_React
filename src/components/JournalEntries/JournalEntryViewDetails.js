@@ -41,20 +41,23 @@ export const SinglePublicEntryWithDetails = () => {
 
                 <div className="entry" key={`entry--${singleEntry.id}`}>
                     <article className="entryCard">                      
-                        <p>DATE/TIME POSTED: {singleEntry.datetime}<br></br></p>
-                        <p>DEVELOPER:        {singleEntry.developer?.first_name} {' '}
-                                             {singleEntry.developer?.last_name}, who is better known as {' '}
-                                             {singleEntry.developer?.nickname}<br></br></p>
-                        <p>SUBJECT:          {singleEntry.subject}<br></br></p>                       
-                        <p>ENTRY:            {singleEntry.body}<br></br></p>                       
-            
-                                            
-                        <p>TECHNOLOGY TAG:   {singleEntry?.techtag?.map(
+                        <p><u>DATE/TIME POSTED:</u> 
+                            <br></br>{singleEntry.datetime}<br></br></p>
+                        <p><u>DEVELOPER:</u>        
+                            <br></br>{singleEntry.developer?.first_name} {' '}
+                                     {singleEntry.developer?.last_name}, who is better known as {' '}
+                                     {singleEntry.developer?.nickname}<br></br></p>
+                        <p><u>SUBJECT:</u>          
+                            <br></br>{singleEntry.subject}<br></br></p>                       
+                        <p><u>ENTRY:</u>            
+                            <br></br>{singleEntry.body}<br></br></p>                   
+                        <p><u>TECHNOLOGY TAG(s):</u>   
+                            <br></br>{singleEntry?.techtag?.map(
                                                 (tech_title) => {
-                                                return tech_title.tech_title  
-                                                })} </p>
-                            
-                        <p>MOOD TAG:         {singleEntry?.moodtag?.map(   
+                                                return tech_title.tech_title 
+                                                })}</p>
+                        <p><u>MOOD TAG(s):</u>         
+                            <br></br>{singleEntry?.moodtag?.map(   
                                                 (tag_title) => {
                                                 return tag_title.tag_title
                                                 },)}</p>                 

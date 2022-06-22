@@ -103,10 +103,6 @@ a {
   display: flex;
 }
 
-.techtag {
-  padding: 8rem 40px;
-  display: flex;
-}
 
 .form-group {
   padding: 8rem 40px;
@@ -133,11 +129,6 @@ a {
   margin-right: 15px;
 }
 
-.techtagCard {
-  list-style: none;
-  flex: 2;
-  margin-right: 15px;
-}
 
 .main__content {
   flex: 7;
@@ -152,3 +143,4 @@ a {
 .main__content p {
   line-height: 25px;
 }
+

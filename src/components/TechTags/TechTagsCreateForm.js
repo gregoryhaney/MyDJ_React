@@ -65,7 +65,7 @@ export const TechtagNewForm = () => {
 
             <br></br>
             <button onClick={addNewTechTag} className="btn btn btn-dark">
-                Save
+                Save New Tag
             </button>
 
 

@@ -58,19 +58,19 @@ export const MoodtagsList = () => {
                     (moodtag) => {              
 
                         return <div className="moodtag" key={`moodtag--${moodtag.id}`}>
-                            <article className="moodtagCard"> 
-                                                 
+                            <article className="moodtagCard">                                                  
                                 {moodtag.tag_title}
 
-                                <button className="btn btn-dark" onClick={() => {
-                                history.push(`moodedit/${moodtag.id}`)
+                                <div className="tagbtns">
+                                    <button className="btn btn-dark" onClick={() => {
+                                    history.push(`moodedit/${moodtag.id}`)
+                                    }}>Edit Mood Tag</button> 
 
-                            }}>Edit Mood Tag</button> 
-
-                            <button className="btn btn-outline-danger" onClick={() => {
-                                deleteMoodtag(moodtag.id)                            
-                            }}>Delete Mood Tag</button> <br></br>
-
+                                    <button className="btn btn-outline-danger" onClick={() => {
+                                        deleteMoodtag(moodtag.id)                            
+                                    }}>Delete Mood Tag</button> <br></br>
+                                </div>
+                                <hr className="rounded2"></hr>
                             </article>
                         </div>                     
                         } 
