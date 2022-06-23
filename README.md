@@ -80,10 +80,10 @@ To run MyDJ, the following steps should be followed:
 2. Once cloned, move into your Django project directory. Execute:
      a. `pipenv install`
      b. `pipenv shell` 
-     c. `pipenv install django autopip8 plying djangorestframework django-cors-headers plyint-django`
+     c. `pipenv install django autopep8 plyint djangorestframework django-cors-headers plyint-django`
 3. In VSCode, set `Python: Select Interpreter`
 4. In VSCode, set `Linter: Pylint`
-5. In the Client (React) project directory, run `rpm install`
+5. In the Client (React) project directory, run `npm install`
 6. To run the application, start the server (Django): `python3 manage.py runserver` followed by starting the client (React): `npm start`. Starting the client will open a web browser tab and bring you to the homepage of the application. You can register as a new user or sign-in with a pre-built user with the following credentials:
 	a. Username: `abc`
   b. Password: `123`
