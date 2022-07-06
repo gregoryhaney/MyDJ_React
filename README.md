@@ -80,10 +80,10 @@ To run MyDJ, the following steps should be followed:
 2. Once cloned, move into your Django project directory. Execute:
      a. `pipenv install`
      b. `pipenv shell` 
-     c. `pipenv install django autopip8 plying djangorestframework django-cors-headers plyint-django`
+     c. `pipenv install django autopep8 plyint djangorestframework django-cors-headers plyint-django`
 3. In VSCode, set `Python: Select Interpreter`
 4. In VSCode, set `Linter: Pylint`
-5. In the Client (React) project directory, run `rpm install`
+5. In the Client (React) project directory, run `npm install`
 6. To run the application, start the server (Django): `python3 manage.py runserver` followed by starting the client (React): `npm start`. Starting the client will open a web browser tab and bring you to the homepage of the application. You can register as a new user or sign-in with a pre-built user with the following credentials:
 	a. Username: `abc`
   b. Password: `123`
@@ -92,7 +92,7 @@ To run MyDJ, the following steps should be followed:
 ## Difficulties and Challenges faced during this Process
 This project began smoothly enough, but soon presented me with a few hurdles. Most of my issues were caused by the Many-to-Many relationships involving the use of multiple tags for the moods and technologies associated to a journal entry. After struggling with that concept on several aspects of the application, I finally was able to make it work as designed.
 
-Another huge challenge for MyDJ, just as it was with my front-end capstone project, PropCzar, was CSS. Recalling how much effort I spent on PropCzar with CSS, I decided upfront to make MyDJ very minimalistic in appearance. I decided that functionality was much more important that visual appeal, and that if time permitted, I would incrementally add CSS. 
+Another huge challenge for MyDJ, just as it was with my front-end capstone project, PropCzar, was CSS. Recalling how much effort I spent on PropCzar with CSS, I decided upfront to make MyDJ very minimalist in appearance. I decided that functionality was much more important that visual appeal, and that if time permitted, I would incrementally add CSS. 
 
 Another thing I said would be a stretch goal would be to convert the standard text-style navigation bar to a more reactive hamburger menu. I though it would fairly simple and straight-forward, but it proved to be anything but. 
 

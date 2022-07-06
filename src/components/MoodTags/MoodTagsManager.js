@@ -3,12 +3,9 @@
     calls regarding mood tags.
 */
 
-import { MoodtagsList } from "./MoodTagsList"
-
-
 /////////////////////// GETTER FUNCTIONS ///////////////////////////////////////
 
-
+    // a FN to get ALL the mood tags
 export const getMoodtags = () => {
     return fetch("http://localhost:8000/moodtags", {
         headers:{
@@ -18,7 +15,7 @@ export const getMoodtags = () => {
         .then(res => res.json())
 }
 
-
+    // a FN to get a single mood tag based on ID
 export const getSingleMoodtag = (id) => {
     return fetch(`http://localhost:8000/moodtags/${id.id}`, {
         headers:{
@@ -28,26 +25,3 @@ export const getSingleMoodtag = (id) => {
         .then(res => res.json())
 }
 
-
-
-
-////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-// export const createMoodTag = {
-//     method: "POST",
-//     headers: {
-//         "Content-Type": "application/json"            
-//     },
-//     body: JSON.stringify(newMoodTag)
-    
-//     return fetch("http://localhost:8000/moodtags", fetchOption)
-//     .then(() => {
-//         history.pushState("/moodtags")
-//     })
-// }
-
-
-    

@@ -19,7 +19,6 @@ export const TechtagNewForm = () => {
             tech_title: techtags.tech_title
         }
         
-        // TODO: move the below POST into TechTagsManager
 
         const fetchOption = {
             method: "POST",
@@ -41,50 +40,45 @@ export const TechtagNewForm = () => {
                 <img src={logo} className="App-logo" alt="logo" />
             <h1 className="newTechTagForm__title">Create New Technology Tag</h1>
                 <hr className="rounded"></hr> 
-            <form className="newTechTagForm">
+                <form className="newTechTagForm">
 
-                <fieldset>
-                    <div className="form-group">
-                        <label htmlFor="techtag">Technology Tag:</label>
-                        <input
-                            onChange={
-                                (evt) => {
-                                    const copy = {...techtags}
-                                    copy.tech_title = evt.target.value
-                                    updateTechtag(copy)
+                    <fieldset>
+                        <div className="form-group">
+                            <label htmlFor="techtag">Technology Tag:</label>
+                            <input
+                                onChange={
+                                    (evt) => {
+                                        const copy = {...techtags}
+                                        copy.tech_title = evt.target.value
+                                        updateTechtag(copy)
+                                    }
                                 }
-                            }
-                            required autoFocus
-                            type="text"
-                            className="form-control"
-                            placeholder="New technology tag..."
-                            />
-                    </div>
-                </fieldset>
+                                required autoFocus
+                                type="text"
+                                className="form-control"
+                                placeholder="New technology tag..."
+                                />
+                        </div>
+                    </fieldset>
 
-
-            <br></br>
-            <button onClick={addNewTechTag} className="btn btn btn-dark">
-                Save New Tag
-            </button>
-
-
-            <button className="btn btn-primary"
-                        onClick={() => {
-                        history.push({ pathname: "/techtags"})}}>
-                Cancel
-            </button>
 
                 <br></br>
-                <br></br>
-                <hr className="rounded"></hr>   
-                <br></br>
+                <button onClick={addNewTechTag} className="btn btn btn-dark">
+                    Save New Tag
+                </button>
 
 
-        </form>
+                <button className="btn btn-primary"
+                            onClick={() => {
+                            history.push({ pathname: "/techtags"})}}>
+                    Cancel
+                </button>
 
-        
+                    <br></br>
+                    <br></br>
+                    <hr className="rounded"></hr>   
+                    <br></br>
+                </form>        
         </>
     )
-
 }

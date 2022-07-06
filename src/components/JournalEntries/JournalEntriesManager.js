@@ -8,7 +8,7 @@ import { useParams } from "react-router-dom"
 
 /////////////////////// GETTER FUNCTIONS ///////////////////////////////////////
 
-
+    // FN to get ALL journal entries
 export const getEntries = () => {
     return fetch("http://localhost:8000/entries", {
         headers:{
@@ -18,7 +18,7 @@ export const getEntries = () => {
         .then(res => res.json())
 }
 
-
+    // FN to get a single journal entry based on ID
 export const getSingleEntry = (id) => {
     return fetch(`http://localhost:8000/entries/${id.id}`, {
         headers:{
@@ -28,7 +28,7 @@ export const getSingleEntry = (id) => {
         .then(res => res.json())
 }
 
-
+    // FN to get a single journal entry (plus the developer) based on ID
 export const getSingleEntryWithDeveloper = (id) => {
     return fetch(`http://localhost:8000/entries/${id.id}?expand=developers`, {
         headers:{
@@ -39,7 +39,7 @@ export const getSingleEntryWithDeveloper = (id) => {
 }
 
 
-
+    // FN to get ALL journal entries plus the developer info
 export const getEntriesWithDeveloper = () => {
     return fetch("http://localhost:8000/entries?expand=developers", {
         headers:{
@@ -50,8 +50,9 @@ export const getEntriesWithDeveloper = () => {
 }
 
 
-////////////////////////////////////////////////////////////////////////////////
+///////////////////// NON-GETTER FUNCTIONS //////////////////////////////////////
 
+    // FN to delete a journal entry based on ID
 export const terminateEntry = (id) => {
     fetch(`http://localhost:8000/entries/${id}`, {
         method: "DELETE",

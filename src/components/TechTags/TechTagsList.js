@@ -1,6 +1,6 @@
 /*
     The purpose of this component is generate the HTML (JSX)
-    that will list the technology tags.
+    that will list ALL the technology tags.
     This is called by route: "/techtags"
 */
 

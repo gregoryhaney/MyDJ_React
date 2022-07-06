@@ -6,7 +6,7 @@
 
 /////////////////////// GETTER FUNCTIONS ///////////////////////////////////////
 
-
+    // a FN to get all the technology tags
 export const getTechtags = () => {
     return fetch("http://localhost:8000/techtags", {
         headers:{
@@ -16,7 +16,7 @@ export const getTechtags = () => {
         .then(res => res.json())
 }
 
-
+    // a FN to get a single technology tag based on ID
 export const getSingleTechtag = (id) => {
     return fetch(`http://localhost:8000/techtags/${id.id}`, {
         headers:{
@@ -29,9 +29,9 @@ export const getSingleTechtag = (id) => {
 
 
 
-////////////////////////////////////////////////////////////////////////////////
+////////////// NON-GETTER FUNCTIONS /////////////////////////////
 
-
+    // a FN to create a new technology tag
 export const createTechtag = (techtag) => {
     return fetch("http://localhost:8000/techtags", {
         headers:{
@@ -39,9 +39,4 @@ export const createTechtag = (techtag) => {
         }
     })
         .then(res => res.json())
-}
-
-
-export const deleteTechtag = (id) => {
-    
 }

@@ -1,6 +1,6 @@
 /*
     The purpose of this component is generate the HTML (JSX)
-    that will list the developers.
+    that will produce a list of the developers.
     This is called by route: "/developers"
 */
 

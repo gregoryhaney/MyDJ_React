@@ -4,6 +4,7 @@
 */
 
 
+    // a FN to retrieve all the developers
 export const getDevelopers = () => {
     return fetch("http://localhost:8000/developers", {
         headers:{
@@ -13,6 +14,7 @@ export const getDevelopers = () => {
         .then(res => res.json())
 }
 
+    // a FN to retrieve a single developer based on ID
 export const getSingleDeveloper = (id) => {
     return fetch(`http://localhost:8000/developers/${id}`, {
         headers:{

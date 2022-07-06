@@ -1,6 +1,6 @@
 /*
     The purpose of this component is generate the HTML (JSX)
-    that will list the journal entries.
+    that will list ALL PUBLIC journal entries.
     This is called by route: "/entries"
 */
 
